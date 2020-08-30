@@ -10,7 +10,9 @@
     <ion-title>alert</ion-title>
   </ion-toolbar>
 </ion-header>-->
-<app-header titulo="Alert Page"></app-header>
+<app-header [titulo]="titulo || 'Alert Page'"></app-header>
 <ion-content  class="ion-padding">
 Alert Pages
+<ion-button color="primary" (click)="presentAlert()">alerta 1</ion-button>
+<ion-button color="secondary" (click)="presentAlertPrompt()">segundo</ion-button>
 </ion-content>

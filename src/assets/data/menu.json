@@ -1,0 +1,50 @@
+[
+    {
+      "icon": "american-football",
+      "name": "Action-sheet",
+      "redirectTo": "./action-sheet"
+     },
+     {"icon": "fast-food-sharp",
+      "name": "Alert",
+      "redirectTo": "/alert"
+     },
+     {"icon": "fast-food-sharp",
+     "name": "Badge",
+     "redirectTo": "/badge"
+    },
+     {"icon": "fast-food-sharp",
+     "name": "Avatar",
+     "redirectTo": "/avatar"
+    },
+    {"icon": "calendar",
+     "name": "Data time",
+     "redirectTo": "/data-time"
+    },
+    {"icon": "calendar",
+     "name": "Card view",
+     "redirectTo": "/card"
+    },
+    {"icon": "calendar",
+     "name": "fab",
+     "redirectTo": "/fab"
+    },
+     {"icon": "infinite",
+     "name": "scrollinfinito",
+     "redirectTo": "/scrollinfinito"
+    },
+     {"icon": "list",
+     "name": "listaLaravel",
+     "redirectTo": "/lista"
+    },
+    {"icon": "search",
+    "name": "search",
+    "redirectTo": "/search"
+   }
+   ,
+    {"icon": "list",
+    "name": "busquedasuperior(segment)",
+    "redirectTo": "/segment"
+   }
+     
+
+  ]

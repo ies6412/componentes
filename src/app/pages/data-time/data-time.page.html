@@ -1,0 +1,65 @@
+<app-header titulo="DatatTime"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="primary">Datos de NAcimientos</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+
+      <ion-datetime
+        placeholder="Nacimiento"
+        displayFormat="D MMM YYYY"
+        min="1970"
+        max="2025"
+        value="{{fechanacimiento}}"
+        cancelText="Cancelar !!!"
+        (ngModel)="fechanacimiento.toISOString()"
+        (ionChange)="cambiodeFecha($event)"
+      >2404563 roberto murgueito</ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label color="secondary" >Restricciones</ion-label>
+    
+    </ion-list-header>
+      <ion-item>
+        <ion-label >restricciones</ion-label>
+        <ion-datetime  placeholder="restricciones"
+                       max="2022-01-01" 
+                       min="2010-01-01"
+                       displayFormat="D MMM YYYY"
+        ></ion-datetime>
+      </ion-item>
+    
+
+
+    <ion-list-header>
+      <ion-label color="tertiary" >Restricciones 2</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label >restricciones de Año</ion-label>
+         <ion-datetime  placeholder="restricciones"
+                       max="2022-01-01" 
+                       min="2010-01-01"
+                       displayFormat="D MMM YYYY"
+                       value="2020"
+        ></ion-datetime>
+      </ion-item>
+
+
+
+      <ion-list-header>
+        <ion-label color="tertiary" >Picker option</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label >restricciones de Año</ion-label>
+           <ion-datetime  [pickerOptions]="customPickerOptions"
+                           [(ngModel)]="customDate"
+          ></ion-datetime>
+        </ion-item>
+   
+  </ion-list>
+</ion-content>

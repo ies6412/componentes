@@ -1,0 +1,17 @@
+<app-header titulo ="BADGE"></app-header>
+
+<ion-content>
+  <ion-badge>99</ion-badge>
+
+  <!-- Colors -->
+
+  
+
+  <!-- Item with badge on left and right -->
+
+  <ion-item  *ngFor="let badge of componentebadge ">
+      <ion-label>{{badge.nombre}}</ion-label>
+
+    <ion-badge slot="{{badge.slot}}" color="{{badge.color}}" >{{badge.numer}}</ion-badge>
+  </ion-item>
+</ion-content>

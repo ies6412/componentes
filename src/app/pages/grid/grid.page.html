@@ -1,0 +1,40 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>grid</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<app-header titulo="GRID"></app-header>
+
+<ion-content padding fullscreen>
+
+<ion-grid fixed>
+  <!--primero es el grid-->
+  <ion-row>
+    <!--luego el row-->
+       <!--el size indica como queremos que se vea en la pantallas de los dispositivos-->
+       <!--por ejemplo en dispositivos grandes , por onision ponemos size=12-->
+       <!--por ejemplo en dispositivos medianos ponenos size-md=4...-->
+    <ion-col 
+     size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+    *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+     <!--luego el columna-->
+     <ion-card>
+       <ion-img src="/assets/shapes.svg"></ion-img>
+       <ion-card-header>
+      
+       <ion-card-subtitle>El sbtitulo</ion-card-subtitle>
+       <ion-card-title>Aqui el titulo</ion-card-title>
+      </ion-card-header>
+       <ion-card-content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio repellendus illum, ea at adipisci, est fuga commodi mollitia aliquam magnam nam totam dignissimos, fugiat odit neque impedit optio soluta?</ion-card-content>
+     </ion-card>
+
+    </ion-col>
+
+  </ion-row>
+
+
+
+</ion-grid>
+
+</ion-content>

@@ -1,0 +1,88 @@
+<!--<app-header titulo="Lista con Laravel"></app-header>-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+       defaultHref="/">
+    </ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista con searchbar</ion-title>
+  </ion-toolbar>
+  <ion-searchbar (ionChange)="buscar($event)" placeholder=" Nombre" ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <!--al porner #lista es como poner un nombre a este objeto con lo cual crei una referencia a esta lista
+  y puedo usar en ts-->
+  <ion-list #lista>
+    <ion-item-sliding *ngFor="let user of usuarios |  filtro: textoabuscar :'name' ">
+      <ion-item>
+        <ion-buttons slot="start">
+          <ion-avatar>
+            <img src="/assets/original.jpg">
+          </ion-avatar>
+        </ion-buttons>
+
+        <ion-label>
+          <h3>{{user.name}}</h3>
+
+          <p>{{user.email}}</p>
+        </ion-label>
+
+        <ion-label slot="end" class="ion-text-right">
+          <h5>{{user.rolesp}}</h5>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="editar(user)">
+          <ion-icon slot="icon-only"
+          name="pencil-outline"></ion-icon>
+        </ion-item-option>
+
+        <ion-item-option
+          color="secondary"
+
+          (click)="compartir(user)"
+        >
+          <ion-icon slot ="icon-only"
+          name="pencil-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="end">
+        <ion-item-option 
+        color="danger"
+        (click)="borrar(user)">
+          <ion-icon
+           slot="icon-only"
+           name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  
+<ion-list *ngIf="(usuarios===null)">
+<ion-item  *ngFor="let item of [1,1,1,1,1,1,1]">
+  <ion-buttons slot="start">
+    <ion-avatar>
+     
+    </ion-avatar>
+  </ion-buttons>
+
+  <ion-label>
+    <h3><ion-skeleton-text width="70%"></ion-skeleton-text></h3>
+
+    <p><ion-skeleton-text width="50%"></ion-skeleton-text></p>
+  </ion-label>
+
+  <ion-label slot="end" class="ion-text-right">
+    <h5><ion-skeleton-text width="10%"></ion-skeleton-text></h5>
+  </ion-label>
+</ion-item>
+
+</ion-list>
+
+  
+</ion-content>

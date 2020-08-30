@@ -1,33 +1,44 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+            <!-- Primera opcion para llamar al menu -->
+      <!-- <ion-button (click)="toggleMenu()"> //lamamos a una funcion llamada toogleMenu en inicio.ts
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button> -->
+      <!-- Segunda opcion llamando directamente a la opcion ion-menu-button
+           esta opcion llama directamente al menu con el nombre del "menu=NombredeMenu" 
+           que es igual a nombre de menuId del menu, verificar en menu.compenent.html -->
+     <ion-menu-button color="primary" menu="PrimerMenu" ></ion-menu-button> 
 
-    
-    <ion-title>Compnentes</ion-title>
+    </ion-buttons>
+
+    <ion-title>Componentes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <!-- utilizando lo de inicio.ts -->
 
+    <ion-item
+      *ngFor="let item of componente"
+      [routerLink]="item.redirectTo"
+    >
+      <ion-icon
+        slot="start"
+        [name]="item.icon"
+        color="primary"
+      ></ion-icon>
 
-<ion-list>
-<!-- utilizando lo de inicio.ts-->
-  <ion-item  
-   *ngFor="let item of componente"
-   [routerLink]="item.redirectTo"> 
-   <ion-icon slot="start" [name]="item.icon"></ion-icon>  
-    <ion-label>{{item.name}}</ion-label>
-  </ion-item>
+      <ion-label>{{item.name}}</ion-label>
+    </ion-item>
 
-
-  <!--forma basica
+    <!-- forma basica
     <ion-item  routerLink="/action-sheet"  >
     <ion-label>Alert2</ion-label>
-  </ion-item>-->
-</ion-list>
+  </ion-item> -->
+  </ion-list>
 
-
-   <ion-button routerLink="/alert">Alert</ion-button>
-   <ion-button routerLink="/action-sheet">Action-sheet</ion-button>
-
-
+  <!-- <ion-button routerLink="/alert">Alert</ion-button>
+   <ion-button routerLink="/action-sheet">Action-sheet</ion-button> -->
 </ion-content>
